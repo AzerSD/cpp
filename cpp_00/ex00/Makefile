@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: azer <sioudazer8@gmail.com>                +#+  +:+       +#+         #
+#    By: asioud <asioud@42heilbronn.de>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/23 20:15:56 by azer              #+#    #+#              #
-#    Updated: 2022/12/23 20:15:57 by azer             ###   ########.fr        #
+#    Updated: 2023/04/27 14:23:56 by asioud           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,4 +32,4 @@ clean:
 fclean: clean
 	@rm -f $(NAME)
 
-re: all clean fclean
+re: clean fclean all
