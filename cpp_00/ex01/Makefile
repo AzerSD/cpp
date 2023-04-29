@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: azer <sioudazer8@gmail.com>                +#+  +:+       +#+         #
+#    By: asioud <asioud@42heilbronn.de>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/23 20:15:51 by azer              #+#    #+#              #
-#    Updated: 2022/12/23 20:15:52 by azer             ###   ########.fr        #
+#    Updated: 2023/04/29 11:12:59 by asioud           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phone_book
+NAME = pb
 
-SRC =	phone_book.cpp	\
+SRC =	PhoneBook.cpp	\
 
 OBJS = $(SRC:.cpp=.o)
 
