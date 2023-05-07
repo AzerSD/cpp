@@ -6,7 +6,7 @@
 /*   By: asioud <asioud@42heilbronn.de>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 06:45:36 by azer              #+#    #+#             */
-/*   Updated: 2023/04/27 14:27:15 by asioud           ###   ########.fr       */
+/*   Updated: 2023/05/07 01:39:10 by asioud           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	{
 		for (int i = 1; i < argc; ++i)
 		{
-			std::string input(argv[i]);
+			std::string input(argv[i]); // convert char* to string
 			for (size_t j = 0; j < input.size(); j++)
 			{
 				input[j] = std::toupper(input[j]);

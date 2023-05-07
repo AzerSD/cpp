@@ -6,7 +6,7 @@
 #    By: asioud <asioud@42heilbronn.de>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/23 20:15:51 by azer              #+#    #+#              #
-#    Updated: 2023/04/29 11:12:59 by asioud           ###   ########.fr        #
+#    Updated: 2023/05/07 02:27:28 by asioud           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,4 +32,4 @@ clean:
 fclean: clean
 	@rm -f $(NAME)
 
-re: all clean fclean
+re: clean fclean all
