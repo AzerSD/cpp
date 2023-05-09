@@ -6,7 +6,7 @@
 /*   By: asioud <asioud@42heilbronn.de>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 06:06:44 by asioud            #+#    #+#             */
-/*   Updated: 2023/05/09 07:51:27 by asioud           ###   ########.fr       */
+/*   Updated: 2023/05/09 08:36:12 by asioud           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,16 @@
 #include <iostream>
 #include <new>
 
-Zombie::Zombie(std::string zombieName) : name(zombieName) {}
+Zombie::Zombie() {}
 
+Zombie::Zombie(std::string zombieName) : name(zombieName) {}
 
 Zombie::~Zombie() {
     std::cout << RED << "Zombie " << name << " has been destroyed." << RESET << std::endl;
+}
+
+void Zombie::setZombieName(std::string name) {
+    this->name = name;
 }
 
 void Zombie::announce(void) const{
@@ -35,10 +40,12 @@ void randomChump(std::string name) {
     zombie.announce();
 }
 
-Zombie* zombieHorde(int N, std::string name) {
-    Zombie* horde = static_cast<Zombie*>(operator new[](N * sizeof(Zombie)));
-    for (int i = 0; i < N; ++i) {
-        new (horde + i) Zombie(name);
+Zombie *zombieHorde(int N, std::string name)
+{
+    Zombie *horde = new Zombie[N];
+    for (int i = 0; i < N; i++)
+    {
+        horde[i].setZombieName(name);
     }
     return horde;
 }

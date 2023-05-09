@@ -6,7 +6,7 @@
 /*   By: asioud <asioud@42heilbronn.de>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 06:04:39 by asioud            #+#    #+#             */
-/*   Updated: 2023/05/09 07:47:36 by asioud           ###   ########.fr       */
+/*   Updated: 2023/05/09 08:36:46 by asioud           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,12 @@ private:
     std::string name;
 
 public:
+    Zombie(); // Default constructor
     Zombie(std::string name);
     ~Zombie( void );
 
-    void announce(void) const;
+    void    announce(void) const;
+    void    setZombieName( std::string name );
 
 };
 
