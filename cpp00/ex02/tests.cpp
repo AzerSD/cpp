@@ -38,8 +38,16 @@ int		main( void ) {
 	ints_t::iterator	wit_end		= withdrawals.end();
 
 	Account::displayAccountsInfos();
+	/* std::mem_fun_ref used to call the member function displayStatus 
+		for each Account object in the range between acc_begin and acc_end.
+	*/
 	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
 
+	/* Create an it object of type acc_iterator
+		this will loop over both objects deb and acc
+		at the same time. processing one account and
+		its corresponding deposit at each iteration
+	*/
 	for ( acc_int_t it( acc_begin, dep_begin );
 		  it.first != acc_end && it.second != dep_end;
 		  ++(it.first), ++(it.second) ) {

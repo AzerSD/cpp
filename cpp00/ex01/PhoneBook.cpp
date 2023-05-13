@@ -6,7 +6,7 @@
 /*   By: asioud <asioud@42heilbronn.de>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 02:06:16 by asioud            #+#    #+#             */
-/*   Updated: 2023/05/07 04:38:01 by asioud           ###   ########.fr       */
+/*   Updated: 2023/05/13 14:05:06 by asioud           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,11 +92,6 @@ private:
 public:
     PhoneBook() : currentContact(0) {}
     
-    /* I pass contact object to the constructor
-        at the index currentContact
-        and the current contact allways changes to be 
-        from 0 to 7 and from 0 again when it reaches 7
-    */
     void addContact(const Contact &contact) {
         contacts[currentContact] = contact;
         currentContact = (currentContact + 1) % MAX_CONTACTS;

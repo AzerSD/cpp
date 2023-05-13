@@ -6,13 +6,13 @@
 #    By: asioud <asioud@42heilbronn.de>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/23 20:15:51 by azer              #+#    #+#              #
-#    Updated: 2023/05/07 02:27:28 by asioud           ###   ########.fr        #
+#    Updated: 2023/05/13 14:09:27 by asioud           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = pb
+NAME = account
 
-SRC =	PhoneBook.cpp	\
+SRC =	Account.cpp	tests.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
