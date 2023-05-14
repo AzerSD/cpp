@@ -6,13 +6,13 @@
 #    By: asioud <asioud@42heilbronn.de>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/23 20:15:51 by azer              #+#    #+#              #
-#    Updated: 2023/05/13 19:09:26 by asioud           ###   ########.fr        #
+#    Updated: 2023/05/13 19:38:29 by asioud           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = sed
+NAME = harl
 
-SRC =	main.cpp	\
+SRC =	main.cpp Harl.cpp	\
 
 OBJS = $(SRC:.cpp=.o)
 
