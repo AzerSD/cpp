@@ -6,7 +6,7 @@
 /*   By: asioud <asioud@42heilbronn.de>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 19:12:33 by asioud            #+#    #+#             */
-/*   Updated: 2023/05/13 19:38:14 by asioud           ###   ########.fr       */
+/*   Updated: 2023/05/14 21:55:58 by asioud           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ Harl::Harl() :
 }
 
 void Harl::complain(std::string level) {
-    // Select the appropriate member function pointer based on the given level
     void (Harl::*ptr)(void) = nullptr;
     if (level == "DEBUG") {
         ptr = debugPtr;
@@ -34,7 +33,6 @@ void Harl::complain(std::string level) {
         ptr = errorPtr;
     }
 
-    // Call the selected member function pointer if it is not null
     if (ptr) {
         (this->*ptr)();
     }
