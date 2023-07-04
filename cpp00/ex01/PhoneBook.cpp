@@ -6,7 +6,7 @@
 /*   By: asioud <asioud@42heilbronn.de>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 02:06:16 by asioud            #+#    #+#             */
-/*   Updated: 2023/05/13 14:05:06 by asioud           ###   ########.fr       */
+/*   Updated: 2023/07/04 01:10:23 by asioud           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ public:
 
 class PhoneBook {
 private:
-    static const int MAX_CONTACTS = 8;
+    static const int MAX_CONTACTS = 8; // static: shared by all instances of the class
     Contact contacts[MAX_CONTACTS];
     int currentContact;
 
@@ -95,12 +95,10 @@ public:
     void addContact(const Contact &contact) {
         contacts[currentContact] = contact;
         currentContact = (currentContact + 1) % MAX_CONTACTS;
-        /* This ensures that the result is always within
-            the range from 0 to MAX_CONTACTS - 1
-        */
     }
 
     int listContacts() const {
+    /* const: read-only method */
         int i;
         for (i = 0; i < MAX_CONTACTS; ++i) {
             if (!contacts[i].isEmpty()) {

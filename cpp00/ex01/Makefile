@@ -6,7 +6,7 @@
 #    By: asioud <asioud@42heilbronn.de>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/23 20:15:51 by azer              #+#    #+#              #
-#    Updated: 2023/05/07 02:27:28 by asioud           ###   ########.fr        #
+#    Updated: 2023/07/04 01:26:46 by asioud           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC =	PhoneBook.cpp	\
 
 OBJS = $(SRC:.cpp=.o)
 
-C_FLAGS = -Wall -Wextra -Werror -std=c++98
+C_FLAGS = -Wall -Wextra -Werror -lefence -std=c++98
 
 CC = c++
 
