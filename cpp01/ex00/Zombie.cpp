@@ -6,11 +6,11 @@
 /*   By: asioud <asioud@42heilbronn.de>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 06:06:44 by asioud            #+#    #+#             */
-/*   Updated: 2023/05/09 06:32:01 by asioud           ###   ########.fr       */
+/*   Updated: 2023/07/04 21:07:34 by asioud           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Zombie.h"
 #include <iostream>
 
 Zombie::Zombie(std::string zombieName) : name(zombieName) {}
@@ -24,11 +24,11 @@ void Zombie::announce(void) const{
 }
 
 Zombie* newZombie(std::string name) {
-    Zombie* zombie = new Zombie(name);
+    Zombie* zombie = new Zombie(name); /* heap allocation */
     return zombie;
 }
 
 void randomChump(std::string name) {
-    Zombie zombie(name);
+    Zombie zombie(name); /* stack allocation */
     zombie.announce();
 }

@@ -6,7 +6,7 @@
 /*   By: asioud <asioud@42heilbronn.de>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 19:12:46 by asioud            #+#    #+#             */
-/*   Updated: 2023/05/14 21:39:08 by asioud           ###   ########.fr       */
+/*   Updated: 2023/07/04 22:23:24 by asioud           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,15 @@
 # define __HARL_H__
 
 #include <string>
+
+
+const std::string RESET     = "\033[0m";
+const std::string GREEN     = "\033[32m";
+const std::string YELLOW    = "\033[33m";
+const std::string RED       = "\033[31m";
+const std::string CYAN      = "\033[36m";
+const std::string ORANGE    = "\033[35m";
+
 
 class Harl {
 public:

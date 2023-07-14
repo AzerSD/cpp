@@ -6,14 +6,13 @@
 /*   By: asioud <asioud@42heilbronn.de>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 05:51:52 by asioud            #+#    #+#             */
-/*   Updated: 2023/05/09 09:43:21 by asioud           ###   ########.fr       */
+/*   Updated: 2023/07/04 21:08:09 by asioud           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Zombie.h"
 #include <iostream>
 
-#include "Zombie.hpp"
 
 int main() {
     Zombie *heapZombie = newZombie("HeapZombie");

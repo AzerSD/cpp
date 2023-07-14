@@ -6,13 +6,13 @@
 /*   By: asioud <asioud@42heilbronn.de>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 06:04:39 by asioud            #+#    #+#             */
-/*   Updated: 2023/05/09 08:36:46 by asioud           ###   ########.fr       */
+/*   Updated: 2023/07/04 21:16:11 by asioud           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-# ifndef __ZOMBIE_H__
-# define __ZOMBIE_H__
+# ifndef __ZOMBIE_HPP__
+# define __ZOMBIE_HPP__
 
 # include <string>
 
