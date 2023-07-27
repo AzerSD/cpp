@@ -6,7 +6,7 @@
 /*   By: asioud <asioud@42heilbronn.de>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 02:06:16 by asioud            #+#    #+#             */
-/*   Updated: 2023/07/04 01:10:23 by asioud           ###   ########.fr       */
+/*   Updated: 2023/07/04 17:15:33 by asioud           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ private:
     int currentContact;
 
 public:
-    PhoneBook() : currentContact(0) {}
+    PhoneBook() : currentContact(0, 0 ) {}
     
     void addContact(const Contact &contact) {
         contacts[currentContact] = contact;

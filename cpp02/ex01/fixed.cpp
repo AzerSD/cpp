@@ -1,17 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   fixed.cpp                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: asioud <asioud@42heilbronn.de>             +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/15 08:40:24 by asioud            #+#    #+#             */
-/*   Updated: 2023/07/18 02:51:51 by asioud           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "fixed.hpp"
-
 
 Fixed::Fixed()
 {
@@ -48,4 +35,34 @@ void	Fixed::setRawBits(int const raw)
 {
 	std::cout << "setRawBits member function called" << std::endl;
 	_val = raw;
+}
+
+/* ex02 */
+
+Fixed::Fixed(int const value)
+{
+	std::cout << "Int constructor called" << std::endl;
+	this->_val = (value << Fixed::_fBits);
+}
+
+Fixed::Fixed(float const value)
+{
+	std::cout << "Float constructor called" << std::endl;
+	this->_val = roundf(value * (1 << Fixed::_fBits));
+}
+
+float Fixed::toFloat(void) const
+{
+	return ((float)this->_val / (float)(1 << Fixed::_fBits));
+}
+
+int Fixed::toInt(void) const
+{
+	return (this->_val >> Fixed::_fBits);
+}
+
+std::ostream &operator<<(std::ostream &out, Fixed const &value)
+{
+    out << value.toFloat();
+    return (out);
 }
