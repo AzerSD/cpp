@@ -1,6 +1,10 @@
 
 # include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap() : _name(), _hitPoints(10), _energy(10), _damage(0) {
+    std::cout << "ClapTrap " << _name << " is Created!" << std::endl;
+}
+
 ClapTrap::ClapTrap( std::string name ) : _name(name), _hitPoints(10), _energy(10), _damage(0) {
     std::cout << "ClapTrap " << _name << " is Created!" << std::endl;
 }

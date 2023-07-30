@@ -12,7 +12,7 @@
 
 NAME = fixed
 
-SRC =	ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp
+SRC =	ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 OBJS = $(SRC:.cpp=.o)
 

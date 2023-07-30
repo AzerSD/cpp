@@ -2,7 +2,15 @@
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
 
+ScavTrap::ScavTrap() {
+	_hitPoints = 100;
+	_energy = 50;
+    _damage = 20;
+	std::cout << "ClapTrap " << _name << " is Created!" << std::endl;
+}
+
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
+    _name = name;
 	_hitPoints = 100;
 	_energy = 50;
     _damage = 20;

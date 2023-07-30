@@ -1,13 +1,14 @@
 
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
 
 int main( void ) {
-    FragTrap mo("Frag1");
+
+    ClapTrap mo("Clap1");
 	mo.attack("Helllllll");
-	mo.takeDamage(80);
+	mo.takeDamage(9);
+	mo.takeDamage(1);
 	mo.beRepaired(10);
-	mo.highFivesGuys();
+	mo.takeDamage(1);
 
     return 0;
 }

@@ -13,6 +13,7 @@ protected:
     unsigned int    _damage;
 
 public:
+    ClapTrap();
     ClapTrap(std::string name);
     ~ClapTrap();
     ClapTrap(const ClapTrap &cpy);

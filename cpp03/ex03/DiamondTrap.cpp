@@ -1,18 +1,18 @@
+
 #include "DiamondTrap.hpp"
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
-#include "ClapTrap.hpp"
 
 DiamondTrap::DiamondTrap(std::string const &name)
 	: ClapTrap(name + "_clap_trap"), ScavTrap(), FragTrap(), _name(name) {
-	std::cout << "DiamondTrap" << name << "Constructor Called" << std::endl;
-	EnergyPoints = ScavTrap::EnergyPoints;
+	std::cout << "DiamondTrap" << _name << "Constructor Called" << std::endl;
+	_energy = ScavTrap::_energy;
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap const &obj) {
-	std::cout << "DiamondTrap copy constructor called" << std::endl;
-	*this = obj;
+DiamondTrap::DiamondTrap(DiamondTrap const &obj)
+    : ClapTrap(obj), ScavTrap(obj), FragTrap(obj), _name(obj._name) {
+    std::cout << "DiamondTrap " << _name << " Copy Constructor Called" << std::endl;
+    _energy = obj._energy;
 }
+
 
 DiamondTrap::~DiamondTrap() {
 	std::cout << "DiamondTrap" << _name << "Destructor Called" << std::endl;
@@ -22,9 +22,9 @@ DiamondTrap &DiamondTrap::operator=(DiamondTrap const &obj) {
     std::cout << "Assignment of " << _name << "Called" << std::endl;
 	if (this != &obj) {
 		_name = obj._name;
-		HitPoints = obj.HitPoints;
-		energy = obj.energy;
-		damage = obj.damage;
+		_hitPoints = obj._hitPoints;
+		_energy = obj._energy;
+		_damage = obj._damage;
 	}
 	return *this;
 }
