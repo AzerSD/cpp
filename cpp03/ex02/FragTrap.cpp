@@ -6,7 +6,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name) {
 	_hitPoints = 100;
 	_energy = 50;
     _damage = 20;
-	std::cout << "ClapTrap " << _name << " is Created!" << std::endl;
+	std::cout << "FragTrap " << _name << " is Created!" << std::endl;
 }
 
 FragTrap::~FragTrap() {
@@ -30,13 +30,13 @@ FragTrap &FragTrap::operator=( const FragTrap& obj ) {
 void    FragTrap::attack( std::string const &target ) {
     if (_energy <= 0)
     {
-        std::cout << "ClapTrap " << _name << " is out of energy!" << std::endl;
+        std::cout << "FragTrap " << _name << " is out of energy!" << std::endl;
         return;
     }
-    std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _damage << " points of damage!" << std::endl;
+    std::cout << "FragTrap " << _name << " attacks " << target << ", causing " << _damage << " points of damage!" << std::endl;
     _energy -= 1;
 }
 
 void FragTrap::highFivesGuys(void) {
-	std::cout << "FragTrap" << _name << "HIGHFIVES!!!" << std::endl;
+	std::cout << "FragTrap " << _name << "HIGHFIVES!!!" << std::endl;
 }

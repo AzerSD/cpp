@@ -2,8 +2,11 @@
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap(std::string const &name)
-	: ClapTrap(name + "_clap_trap"), ScavTrap(), FragTrap(), _name(name) {
-	std::cout << "DiamondTrap" << _name << "Constructor Called" << std::endl;
+	: ClapTrap(name + "_ClapTrap"), 
+		ScavTrap(name + "_ScavTrap"),
+		FragTrap(name + "_FragTrap"),
+		_name(name) {
+	std::cout << "DiamondTrap " << _name << "Constructor Called" << std::endl;
 	_energy = ScavTrap::_energy;
 }
 
@@ -15,11 +18,11 @@ DiamondTrap::DiamondTrap(DiamondTrap const &obj)
 
 
 DiamondTrap::~DiamondTrap() {
-	std::cout << "DiamondTrap" << _name << "Destructor Called" << std::endl;
+	std::cout << "DiamondTrap " << " Destructor Called" << std::endl;
 }
 
 DiamondTrap &DiamondTrap::operator=(DiamondTrap const &obj) {
-    std::cout << "Assignment of " << _name << "Called" << std::endl;
+    std::cout << "Assignment of " << _name << " Called" << std::endl;
 	if (this != &obj) {
 		_name = obj._name;
 		_hitPoints = obj._hitPoints;
@@ -30,7 +33,7 @@ DiamondTrap &DiamondTrap::operator=(DiamondTrap const &obj) {
 }
 
 void DiamondTrap::whoAmI(void) {
-	std::cout << "DiamondTrap" << _name << " is " << _name << std::endl;
+	std::cout << "DiamondTrap " << _name << " is " << ClapTrap::_name << std::endl;
 }
 
 void DiamondTrap::attack(const std::string &target) {

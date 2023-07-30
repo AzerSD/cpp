@@ -5,11 +5,13 @@
 
 int main( void )
 {
-    ScavTrap bo("bot");
-    bo.attack("bot2");
-	bo.takeDamage(9);
-	bo.beRepaired(2);
-	bo.guardGate();
+    ScavTrap mo("bot");
+	mo.attack("Helllllll");
+	mo.takeDamage(99);
+	mo.takeDamage(1);
+	mo.beRepaired(10);
+	mo.takeDamage(1);
+    mo.guardGate();
 
     return 0;
 }

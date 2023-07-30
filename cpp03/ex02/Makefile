@@ -16,7 +16,7 @@ SRC =	ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp
 
 OBJS = $(SRC:.cpp=.o)
 
-C_FLAGS = -Wall -Wextra -Werror -std=c++98
+C_FLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow
 
 CC = c++
 

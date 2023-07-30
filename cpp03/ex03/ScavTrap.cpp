@@ -6,7 +6,7 @@ ScavTrap::ScavTrap() {
 	_hitPoints = 100;
 	_energy = 50;
     _damage = 20;
-	std::cout << "ClapTrap " << _name << " is Created!" << std::endl;
+	std::cout << "ScavTrap " << _name << " is Created!" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
@@ -14,7 +14,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 	_hitPoints = 100;
 	_energy = 50;
     _damage = 20;
-	std::cout << "ClapTrap " << _name << " is Created!" << std::endl;
+	std::cout << "ScavTrap " << _name << " is Created!" << std::endl;
 }
 
 ScavTrap::~ScavTrap() {
@@ -38,13 +38,13 @@ ScavTrap &ScavTrap::operator=( const ScavTrap& obj ) {
 void    ScavTrap::attack( std::string const &target ) {
     if (_energy <= 0)
     {
-        std::cout << "ClapTrap " << _name << " is out of energy!" << std::endl;
+        std::cout << "ScavTrap " << _name << " is out of energy!" << std::endl;
         return;
     }
-    std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _damage << " points of damage!" << std::endl;
+    std::cout << "ScavTrap " << _name << " attacks " << target << ", causing " << _damage << " points of damage!" << std::endl;
     _energy -= 1;
 }
 
 void ScavTrap::guardGate(void) {
-    std::cout << _name << "GUARDED" << std::endl;
+    std::cout << _name << " GUARDED " << std::endl;
 }

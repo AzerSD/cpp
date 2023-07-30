@@ -6,7 +6,7 @@ ClapTrap::ClapTrap( std::string name ) : _name(name), _hitPoints(10), _energy(10
 }
 
 ClapTrap::~ClapTrap(void) {
-    std::cout << "ClapTrap" << _name << "Destructor Called" << std::endl;
+    std::cout << "ClapTrap " << _name << " Destructor Called" << std::endl;
     return;
 }
 
@@ -38,7 +38,7 @@ void    ClapTrap::attack( std::string const &target ) {
 void    ClapTrap::takeDamage( unsigned int amount ) {
     if (_hitPoints <= amount)
     {
-        std::cout << "ClapTrap " << _name << " is dead!" << std::endl;
+        std::cout << "ClapTrap " << _name << " Takes " << amount << " Damage and R.I.P" << std::endl;
         return;
     }
     std::cout << "ClapTrap " << _name << " takes " << amount << " damage!" << std::endl;
