@@ -10,14 +10,13 @@ ClapTrap::~ClapTrap(void) {
     return;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &obj)
-{
+ClapTrap::ClapTrap(const ClapTrap &obj) {
     *this = obj;
     std::cout << "ClapTrap copy constructor called" << std::endl;
     return;
 }
 
-ClapTrap    &ClapTrap::operator=( const ClapTrap& obj ) {
+ClapTrap&   ClapTrap::operator=( const ClapTrap &obj ) {
     this->_name = obj._name;
     this->_hitPoints = obj._hitPoints;
     this->_energy = obj._energy;
@@ -25,7 +24,7 @@ ClapTrap    &ClapTrap::operator=( const ClapTrap& obj ) {
     return *this;
 }
 
-void    ClapTrap::attack( std::string const& target ) {
+void    ClapTrap::attack( std::string const &target ) {
     if (_energy <= 0)
     {
         std::cout << "ClapTrap " << _name << " is out of energy!" << std::endl;

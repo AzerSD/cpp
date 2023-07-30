@@ -1,14 +1,15 @@
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+
 
 int main( void )
 {
-    ClapTrap mo("abc");
-    mo.beRepaired(10);
-    mo.attack("asdf");
-    mo.takeDamage(1);
-    mo.takeDamage(100000);
-    mo.beRepaired(10);
+    ScavTrap bo("bot");
+    bo.attack("bot2");
+	bo.takeDamage(9);
+	bo.beRepaired(2);
+	bo.guardGate();
 
     return 0;
 }
