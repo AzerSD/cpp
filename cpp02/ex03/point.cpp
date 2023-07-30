@@ -17,10 +17,10 @@ Point::~Point() {
     // std::cout << "Point destroyed" << std::endl;
 }
 
-Point&  Point::operator=( const Point &rhs ) {
-    if ( this != &rhs ) {
-        ( Fixed ) this->_x = rhs.getX();
-        ( Fixed ) this->_y = rhs.getY();
+Point&  Point::operator=( const Point &obj ) {
+    if ( this != &obj ) {
+        ( Fixed ) this->_x = obj.getX();
+        ( Fixed ) this->_y = obj.getY();
     }
     return *this;
 }

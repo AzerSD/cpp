@@ -6,7 +6,7 @@ ClapTrap::ClapTrap( std::string name ) : _name(name), _hitPoints(10), _energy(10
 }
 
 ClapTrap::~ClapTrap(void) {
-    std::cout << "ClapTrap Destructor Called" << std::endl;
+    std::cout << "ClapTrap" << _name << "Destructor Called" << std::endl;
     return;
 }
 
@@ -17,6 +17,7 @@ ClapTrap::ClapTrap(const ClapTrap &obj) {
 }
 
 ClapTrap&   ClapTrap::operator=( const ClapTrap &obj ) {
+    std::cout << "Assignment of " << _name << "Called" << std::endl;
     this->_name = obj._name;
     this->_hitPoints = obj._hitPoints;
     this->_energy = obj._energy;
