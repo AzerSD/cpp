@@ -13,12 +13,12 @@ WrongAnimal::~WrongAnimal() {
 	std::cout << "### WrongAnimal " << this->_type << " is destroyed" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal& Parent) : _type(Parent._type) {
-	std::cout << "### WrongAnimal copy constructor called on " << Parent._type << std::endl;
+WrongAnimal::WrongAnimal(const WrongAnimal& obj) : _type(obj._type) {
+	std::cout << "### WrongAnimal copy constructor called on " << obj._type << std::endl;
 }
 
-WrongAnimal& WrongAnimal::operator=(const WrongAnimal& cpyParent) {
-	this->_type = cpyParent._type;
+WrongAnimal& WrongAnimal::operator=(const WrongAnimal& cpy) {
+	this->_type = cpy._type;
 	return *this;
 }
 

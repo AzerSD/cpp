@@ -12,7 +12,7 @@ int main(void)
 
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
+	i->makeSound();
 	j->makeSound();
 	meta->makeSound();
 
@@ -24,7 +24,7 @@ int main(void)
 	const WrongAnimal* metaB = new WrongAnimal();
 	const WrongAnimal* catB = new WrongCat();
 	std::cout << catB->getType() << " " << std::endl;
-	catB->makeSound(); //will output the cat sound!
+	catB->makeSound();
 	metaB->makeSound();
 
 	delete metaB;
