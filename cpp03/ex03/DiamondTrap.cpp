@@ -6,7 +6,7 @@ DiamondTrap::DiamondTrap(std::string const &name)
 		ScavTrap(name + "_ScavTrap"),
 		FragTrap(name + "_FragTrap"),
 		_name(name) {
-	std::cout << "DiamondTrap " << _name << "Constructor Called" << std::endl;
+	std::cout << "DiamondTrap " << _name << " Constructor Called" << std::endl;
 	_energy = ScavTrap::_energy;
 }
 
@@ -15,7 +15,6 @@ DiamondTrap::DiamondTrap(DiamondTrap const &obj)
     std::cout << "DiamondTrap " << _name << " Copy Constructor Called" << std::endl;
     _energy = obj._energy;
 }
-
 
 DiamondTrap::~DiamondTrap() {
 	std::cout << "DiamondTrap " << " Destructor Called" << std::endl;
