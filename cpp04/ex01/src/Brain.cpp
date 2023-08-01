@@ -50,7 +50,7 @@ Brain& Brain::operator=(const Brain &cpyParent)
 
 Brain::~Brain()
 {
-	std::cout << "### Brain destructor is called" << std::endl;
+	std::cout << "### Brain is destroyed" << std::endl;
 }
 
 const std::string& Brain::getIdea(int index) const
