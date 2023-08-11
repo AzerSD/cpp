@@ -1,6 +1,6 @@
 
-NAME = Animal
-SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
+NAME = bureaucrat
+SRC = main.cpp Bureaucrat.cpp Form.cpp
 SRCDIR = src/
 INCDIR = incl/
 OBJDIR = bin/

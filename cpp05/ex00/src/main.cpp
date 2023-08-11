@@ -1,8 +1,6 @@
 
 # include "Bureaucrat.hpp"
 
-# include "Bureaucrat.hpp"
-
 int main(void) {
 
     Bureaucrat b("buro", 1);
@@ -27,5 +25,4 @@ int main(void) {
     d.decrBureau();
     d.decrBureau();
     std::cout << d.getName() << ", bureaucrat grade " << d.getGrade() << std::endl;
-
 }
