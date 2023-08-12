@@ -1,6 +1,6 @@
 
 NAME = bureaucrat
-SRC = main.cpp Bureaucrat.cpp AForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp ShrubberyCreationForm.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp ShrubberyCreationForm.cpp Intern.cpp
 SRCDIR = src/
 INCDIR = incl/
 OBJDIR = bin/
