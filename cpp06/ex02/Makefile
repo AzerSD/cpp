@@ -1,6 +1,6 @@
 
 NAME = a.out
-SRC = A.cpp        B.cpp        C.cpp        Generate.cpp Identify.cpp main.cpp
+SRC = Generate.cpp Identify.cpp main.cpp
 SRCDIR = src/
 INCDIR = incl/
 OBJDIR = bin/
