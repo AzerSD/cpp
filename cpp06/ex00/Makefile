@@ -1,5 +1,5 @@
 
-NAME = a.out
+NAME = convert
 SRC = main.cpp ScalarConverter.cpp
 SRCDIR = src/
 INCDIR = incl/

@@ -14,6 +14,7 @@ public:
 
 private:
     static void handleNumericInput(const std::string& input);
+    static std::string removeChar(const std::string& s, char c);
 };
 
 #endif

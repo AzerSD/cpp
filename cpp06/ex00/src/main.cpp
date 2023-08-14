@@ -1,18 +1,11 @@
 # include "ScalarConverter.hpp"
+# include <iostream>
 
-int main() {
-    ScalarConverter::convert("c");
-    ScalarConverter::convert("42");
-    ScalarConverter::convert("4.2f");
-    ScalarConverter::convert("4.2");
-    ScalarConverter::convert("-4.2");
-    ScalarConverter::convert("-inff");
-    ScalarConverter::convert("+inff");
-    ScalarConverter::convert("+inf");
-    ScalarConverter::convert("-inf");
-    ScalarConverter::convert("nan");
-
-    ScalarConverter::convert("nand");
-
+int main(int argc, char *argv[]) {
+    if (argc != 2) {
+        std::cerr << "Usage: ./convert <scalar_value>" << std::endl;
+        return 1;
+    }
+    ScalarConverter::convert(argv[1]);
     return 0;
 }

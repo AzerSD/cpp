@@ -20,83 +20,92 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter& rhs) {
     return *this;
 }
 
-std::string removeChar(const std::string& str, char c) {
-    std::string result;
-    for (size_t i = 0; i < str.size(); ++i) {
-        if (str[i] != c) {
-            result += str[i];
-        }
-    }
-    return result;
-}
-
 void ScalarConverter::convert(const std::string& input) {
-    std::istringstream iss(input);
+    if (input.size() == 3 && input[0] == '\'' && input[2] == '\'' && std::isprint(input[1])) {
+        char value = input[1];
+        std::cout << "char: " << value << std::endl;
+        std::cout << "int: " << static_cast<int>(value) << std::endl;
+        std::cout << "float: " << static_cast<float>(value) << "f" << std::endl;
+        std::cout << "double: " << static_cast<double>(value) << std::endl;
 
-    if (input.size() == 1 && std::isprint(input[0])) {
+    } else if (input.size() == 1 && std::isprint(input[0])) {
+        // handle the case for a single character without single quotes
         char value = input[0];
         std::cout << "char: " << value << std::endl;
+        std::cout << "int: " << static_cast<int>(value) << std::endl;
+        std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(value) << "f" << std::endl;
+        std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(value) << std::endl;
     } else {
-        char c;
-        if (iss >> c) {
-            if (c == '-' || std::isdigit(c) || c == '+' || input == "nan") {
-                handleNumericInput(input);
-            } else {
-                std::cout << "Cannot convert the input to a valid scalar type." << std::endl;
-            }
-        } else {
-            std::cout << "Cannot convert the input to a valid scalar type." << std::endl;
-        }
+        handleNumericInput(input);
     }
 }
 
 void ScalarConverter::handleNumericInput(const std::string& input) {
     std::istringstream iss(input);
 
-    if (input == "inff") {
-        std::cout << "float: " << static_cast<float>(std::numeric_limits<float>::infinity()) << "f" << std::endl;
-    } else if (input == "-inff") {
-        std::cout << "float: " << static_cast<float>(-std::numeric_limits<float>::infinity()) << "f" << std::endl;
-    } else if (input == "+inff") {
-        std::cout << "float: " << static_cast<float>(std::numeric_limits<float>::infinity()) << "f" << std::endl;
-    }else if (input == "nanf") {
-        std::cout << "float: " << static_cast<float>(std::numeric_limits<float>::quiet_NaN()) << "f" << std::endl;
-    } else if (input == "inf") {
-        std::cout << "double: " << std::numeric_limits<double>::infinity() << std::endl;
-    } else if (input == "-inf") {
-        std::cout << "double: " << -std::numeric_limits<double>::infinity() << std::endl;
-    }  else if (input == "+inf") {
-        std::cout << "double: " << std::numeric_limits<double>::infinity() << std::endl;
-    } else if (input == "nan") {
+    if (input == "inff" || input == "-inff" || input == "+inff")
+    {
+        float val = input == "-inff" ? -std::numeric_limits<float>::infinity() : std::numeric_limits<float>::infinity();
+        std::cout << "char: impossible" << std::endl;
+        std::cout << "int: impossible" << std::endl;
+        std::cout << "float: " << val << "f" << std::endl;
+        std::cout << "double: " << static_cast<double>(val) << std::endl;
+    }
+    else if (input == "nanf")
+    {
+        std::cout << "char: impossible" << std::endl;
+        std::cout << "int: impossible" << std::endl;
+        std::cout << "float: " << std::numeric_limits<float>::quiet_NaN() << "f" << std::endl;
+        std::cout << "double: " << static_cast<double>(std::numeric_limits<float>::quiet_NaN()) << std::endl;
+    }
+    else if (input == "inf" || input == "-inf" || input == "+inf")
+    {
+        double val = input == "-inf" ? -std::numeric_limits<double>::infinity() : std::numeric_limits<double>::infinity();
+        std::cout << "char: impossible" << std::endl;
+        std::cout << "int: impossible" << std::endl;
+        std::cout << "float: " << static_cast<float>(val) << "f" << std::endl;
+        std::cout << "double: " << val << std::endl;
+    }
+    else if (input == "nan")
+    {
+        std::cout << "char: impossible" << std::endl;
+        std::cout << "int: impossible" << std::endl;
+        std::cout << "float: " << static_cast<float>(std::numeric_limits<double>::quiet_NaN()) << "f" << std::endl;
         std::cout << "double: " << std::numeric_limits<double>::quiet_NaN() << std::endl;
-    } else if (input.find("f") != std::string::npos) {
+    }
+    else if (input.find("f") != std::string::npos)
+    {
         float floatValue;
-        std::string in = input;
-        in = removeChar(in, 'f');
+        std::string in = removeChar(input, 'f');
         std::istringstream iss(in);
         if (iss >> floatValue) {
-            std::cout << "float: " << floatValue << "f" << std::endl;
-        } else {
-            std::cout << "Cannot convert the input to a valid scalar type." << std::endl;
+            std::cout << "char: " << (isprint(static_cast<int>(floatValue)) ? std::string(1, static_cast<char>(floatValue)) : "Non displayable") << std::endl;
+            std::cout << "int: " << static_cast<int>(floatValue) << std::endl;
+            std::cout << "float: " << std::fixed << std::setprecision(1) << floatValue << "f" << std::endl;
+            std::cout << "float: " << std::fixed << std::setprecision(1) << floatValue << "f" << std::endl;
         }
-    } else if (input.find(".") != std::string::npos) {
+    }
+    else
+    {
         double doubleValue;
         if (iss >> doubleValue) {
-            std::cout << "double: " << doubleValue << std::endl;
-        } else {
-            std::cout << "Cannot convert the input to a valid scalar type." << std::endl;
-        }
-    } else {
-        long longValue;
-        if (iss >> longValue) {
-            if (longValue >= std::numeric_limits<int>::min() && longValue <= std::numeric_limits<int>::max()) {
-                int intValue = static_cast<int>(longValue);
-                std::cout << "int: " << intValue << std::endl;
-            } else {
-                std::cout << "Input value is outside the range of int." << std::endl;
-            }
+            std::cout << "char: " << (isprint(static_cast<int>(doubleValue)) ? std::string(1, static_cast<char>(doubleValue)) : "Non displayable") << std::endl;
+            std::cout << "int: " << (doubleValue >= std::numeric_limits<int>::min() && doubleValue <= std::numeric_limits<int>::max() ? std::to_string(static_cast<int>(doubleValue)) : "impossible") << std::endl;
+            std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(doubleValue) << "f" << std::endl;
+            std::cout << "double: " << std::fixed << std::setprecision(1) << doubleValue << std::endl;
+
         } else {
             std::cout << "Cannot convert the input to a valid scalar type." << std::endl;
         }
     }
+}
+
+std::string ScalarConverter::removeChar(const std::string& s, char c) {
+    std::string result;
+    for (size_t i = 0; i < s.size(); i++) {
+        if (s[i] != c) {
+            result += s[i];
+        }
+    }
+    return result;
 }
