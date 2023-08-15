@@ -27,12 +27,10 @@ void ScalarConverter::convert(const std::string& input) {
         std::cout << "int: " << static_cast<int>(value) << std::endl;
         std::cout << "float: " << static_cast<float>(value) << "f" << std::endl;
         std::cout << "double: " << static_cast<double>(value) << std::endl;
-
-    } else if (input.size() == 1 && std::isprint(input[0])) {
-        // handle the case for a single character without single quotes
-        char value = input[0];
-        std::cout << "char: " << value << std::endl;
-        std::cout << "int: " << static_cast<int>(value) << std::endl;
+    } else if (input.size() == 1 && std::isdigit(input[0])) {
+        int value = std::stoi(input);
+        std::cout << "char: " << (isprint(value) ? std::string(1, static_cast<char>(value)) : "Non displayable") << std::endl;
+        std::cout << "int: " << value << std::endl;
         std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(value) << "f" << std::endl;
         std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(value) << std::endl;
     } else {
@@ -82,21 +80,16 @@ void ScalarConverter::handleNumericInput(const std::string& input) {
             std::cout << "char: " << (isprint(static_cast<int>(floatValue)) ? std::string(1, static_cast<char>(floatValue)) : "Non displayable") << std::endl;
             std::cout << "int: " << static_cast<int>(floatValue) << std::endl;
             std::cout << "float: " << std::fixed << std::setprecision(1) << floatValue << "f" << std::endl;
-            std::cout << "float: " << std::fixed << std::setprecision(1) << floatValue << "f" << std::endl;
+            std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(floatValue) << std::endl;  // Corrected here
+        }
+        else 
+        {
+            std::cout << "Cannot convert the input to a valid scalar type." << std::endl;
         }
     }
     else
     {
-        double doubleValue;
-        if (iss >> doubleValue) {
-            std::cout << "char: " << (isprint(static_cast<int>(doubleValue)) ? std::string(1, static_cast<char>(doubleValue)) : "Non displayable") << std::endl;
-            std::cout << "int: " << (doubleValue >= std::numeric_limits<int>::min() && doubleValue <= std::numeric_limits<int>::max() ? std::to_string(static_cast<int>(doubleValue)) : "impossible") << std::endl;
-            std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(doubleValue) << "f" << std::endl;
-            std::cout << "double: " << std::fixed << std::setprecision(1) << doubleValue << std::endl;
-
-        } else {
-            std::cout << "Cannot convert the input to a valid scalar type." << std::endl;
-        }
+        std::cout << "Cannot convert the input to a valid scalar type." << std::endl;
     }
 }
 
