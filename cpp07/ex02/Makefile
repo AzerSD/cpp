@@ -1,6 +1,6 @@
 
 NAME = a.out
-SRC =  main.cpp
+SRC =  main.cpp 
 SRCDIR = src/
 INCDIR = incl/
 OBJDIR = bin/

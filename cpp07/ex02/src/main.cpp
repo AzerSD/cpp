@@ -1,39 +1,33 @@
-// main.cpp
-
 #include <iostream>
-#include "Iter.hpp"
-
-template <typename T>
-void print(const T &elem) {
-    std::cout << elem << " ";
-}
-
-void square(int &elem) {
-    elem *= elem;
-}
+#include "Array.hpp"
 
 int main() {
-    int intArr[] = {1, 2, 3, 4, 5};
-    double doubleArr[] = {1.1, 2.2, 3.3, 4.4, 5.5};
-    std::string strArr[] = {"one", "two", "three"};
+    try {
+        // Test constructors
+        Array<int> arr1;
+        Array<int> arr2(5);
 
-    std::cout << "Printing int array: ";
-    iter(intArr, 5, print<int>);
-    std::cout << std::endl;
+        std::cout << "Size of arr1: " << arr1.size() << std::endl;
+        std::cout << "Size of arr2: " << arr2.size() << std::endl;
 
-    std::cout << "Printing double array: ";
-    iter(doubleArr, 5, print<double>);
-    std::cout << std::endl;
+        // Test assignment and copy constructors
+        Array<int> arr3 = arr2;
+        Array<int> arr4(arr2);
 
-    std::cout << "Printing string array: ";
-    iter(strArr, 3, print<std::string>);
-    std::cout << std::endl;
+        arr2[0] = 10;
+        arr3[1] = 20;
+        arr4[2] = 30;
 
-    iter(intArr, 5, square);
+        std::cout << "arr2[0]: " << arr2[0] << std::endl;
+        std::cout << "arr3[1]: " << arr3[1] << std::endl;
+        std::cout << "arr4[2]: " << arr4[2] << std::endl;
 
-    std::cout << "Printing squared int array: ";
-    iter(intArr, 5, print<int>);
-    std::cout << std::endl;
+
+        std::cout << "arr2[10]: " << arr2[10] << std::endl;
+
+    } catch (const std::exception& e) {
+        std::cout << "Exception caught: " << e.what() << std::endl;
+    }
 
     return 0;
 }
